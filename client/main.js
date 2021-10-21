@@ -4,7 +4,8 @@ const getProducts = () => {
         headers: { "Accept": "application/json" },
         url: 'http://localhost/Products/skeleton/public/'
     }).done(res => {
-        let $listProducts = res.$listProducts;
+
+        let listProducts = res.listProducts;
         let table = $("#contenido");
         table.append(
             "<tr class='bg-dark text-light'>" +
@@ -14,12 +15,13 @@ const getProducts = () => {
             "<th scope='col'>Status</th>" +
             "</tr>")
 
-        for (let i = 0; i < $listProducts.length; i++) {
-            table.append("<tr>" +
-                "<td>" + res[i].idproduct + "</td>" +
-                "<td>" + res[i].name + "</td>" +
-                "<td>" + res[i].price + "</td>" +
-                "<td>" + res[i].status + "</td>" +
+        for (let i = 0; i < listProducts.length; i++) {
+            table.append(
+                "<tr>" +
+                "<td>" + listProducts[i].idproduct + "</td>" +
+                "<td>" + listProducts[i].name + "</td>" +
+                "<td>" + listProducts[i].price + "</td>" +
+                "<td>" + listProducts[i].status + "</td>" +
                 "</tr>")
         }
     });
