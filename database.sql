@@ -1,0 +1,13 @@
+Create database mitiendita;
+user mitiendita;
+
+
+
+CREATE TABLE products(
+    idProduct INT AUTO_INCREMENT,
+    name VARCHAR(1290) NOT NULL,
+    price DECIMAL(7,2) NOT NULL,
+    status INT NOT NULL,
+
+    CONSTRAINT pk_products_idProduct PRIMARY KEY(idProduct)
+);
